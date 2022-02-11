@@ -7,12 +7,18 @@ namespace Pesh.Common.Cards;
 /// </summary>
 public class Hand : Pile
 {
+	/// <summary>
+	/// Receives <paramref name="card"/> into this <see cref="Hand"/>.
+	/// </summary>
 	public void Receive(Card card)
 	{
 		Debug.Assert(!list.Contains(card));
 		list.Add(card);
 	}
 
+	/// <summary>
+	/// Takes out a <see cref="Card"/> at <paramref name="index"/>.
+	/// </summary>
 	public Card TakeOut(int index)
 	{
 		Card card = list[index];
@@ -21,5 +27,8 @@ public class Hand : Pile
 		return card;
 	}
 
+	/// <summary>
+	/// Completely empties this <see cref="Hand"/>.
+	/// </summary>
 	public void Clear() => list.Clear();
 }

@@ -2,4 +2,4 @@
 
 namespace Pesh.Euchre;
 
-public class EuchreGame : Game { }
+// public class EuchreGame : Game { }

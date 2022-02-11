@@ -25,24 +25,28 @@ public class Deck : Pile
 		{
 			list.Add(new Card(suit, rank));
 		}
-
-		//Reverse to new deck order
-		list.Reverse(list.Count - ranks.Length * 1, ranks.Length);
-		list.Reverse(list.Count - ranks.Length * 2, ranks.Length);
 	}
 
 	readonly Random random = new();
 
+	int topCardIndex;
+
+	/// <summary>
+	/// Shuffles and <see cref="Reset"/> this deck.
+	/// </summary>
 	public void Shuffle()
 	{
-		for (int i = list.Count - 1; i > 0; i--)
-		{
-			int other = random.Next(i + 1);
-
-			//Swap
-			var storage = list[other];
-			list[other] = list[i];
-			list[i] = storage;
-		}
+		list.Shuffle(random);
+		Reset();
 	}
+
+	/// <summary>
+	/// Resets this <see cref="Deck"/> to get ready for <see cref="Deal"/> again.
+	/// </summary>
+	public void Reset() => topCardIndex = 0;
+
+	/// <summary>
+	/// Deals out the top <see cref="Card"/> in this <see cref="Deck"/>.
+	/// </summary>
+	public Card Deal() => list[topCardIndex++];
 }

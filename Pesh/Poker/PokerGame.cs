@@ -2,7 +2,4 @@
 
 namespace Pesh.Poker;
 
-public class PokerGame : Game
-{
-
-}
+// public class PokerGame : Game { }
