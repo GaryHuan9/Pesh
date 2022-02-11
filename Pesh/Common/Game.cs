@@ -1,6 +1,6 @@
 ﻿namespace Pesh.Common;
 
-public class Game
-{
-	
-}
+/// <summary>
+/// A generic game.
+/// </summary>
+public abstract class Game { }
