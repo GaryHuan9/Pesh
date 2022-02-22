@@ -2,4 +2,15 @@
 
 namespace Pesh.Euchre;
 
-// public class EuchreGame : Game { }
+public class EuchreGame : Game<EuchrePlayer>
+{
+	public override void Initialize()
+	{
+		throw new NotImplementedException();
+	}
+
+	public override bool Simulate(Scores scores)
+	{
+		throw new NotImplementedException();
+	}
+}

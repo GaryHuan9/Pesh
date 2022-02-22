@@ -52,4 +52,6 @@ public class Pile
 	/// Returns the index of <paramref name="card"/> if it is in this <see cref="Pile"/>, a negative number otherwise.
 	/// </summary>
 	public int IndexOf(Card card) => list.IndexOf(card);
+
+	public List<Card>.Enumerator GetEnumerator() => list.GetEnumerator();
 }
