@@ -34,9 +34,9 @@ public abstract class Game<T> where T : Player
 	public void ShuffleSeats() => players.Shuffle(random);
 
 	/// <summary>
-	/// Returns a new empty <see cref="Scores"/> to be used for this <see cref="Game{T}"/>.
+	/// Returns a new empty <see cref="ScoreReport"/> to be used for this <see cref="Game{T}"/>.
 	/// </summary>
-	public virtual Scores CreateScores() => new Scores(maxPlayer);
+	public virtual ScoreReport CreateScores() => new ScoreReport(maxPlayer);
 
 	/// <summary>
 	/// Initializes this <see cref="Game{T}"/> to be ready for a new 'session'.
@@ -45,8 +45,8 @@ public abstract class Game<T> where T : Player
 
 	/// <summary>
 	/// Simulates this <see cref="Game{T}"/> for one 'round'. Returns true if this game 'session' is still ongoing, false if it has concluded.
-	/// Optionally assign scores to <paramref name="scores"/> for each <see cref="Player"/>. Note that <paramref name="scores"/> is reused
+	/// Optionally assign scores to <paramref name="report"/> for each <see cref="Player"/>. Note that <paramref name="report"/> is reused
 	/// across multiple invocations of <see cref="Simulate"/>, and it must be correctly filled out after the last invocation.
 	/// </summary>
-	public abstract bool Simulate(Scores scores);
+	public abstract bool Simulate(ScoreReport report);
 }

@@ -9,7 +9,7 @@ public class PokerGame : Game<PokerPlayer>
 		throw new NotImplementedException();
 	}
 
-	public override bool Simulate(Scores scores)
+	public override bool Simulate(ScoreReport report)
 	{
 		throw new NotImplementedException();
 	}

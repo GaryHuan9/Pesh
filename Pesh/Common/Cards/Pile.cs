@@ -22,7 +22,6 @@ public class Pile
 	/// <summary>
 	/// Adds <paramref name="card"/> to this <see cref="Pile"/>.
 	/// </summary>
-	/// <param name="card"></param>
 	public void Add(Card card) => list.Add(card);
 
 	/// <summary>
@@ -39,9 +38,16 @@ public class Pile
 	}
 
 	/// <summary>
-	/// Removes the <see cref="Card"/> at <paramref name="index"/>.
+	/// Removes the <see cref="Card"/> at <paramref name="index"/>. Returns the <see cref="Card"/>
+	/// that is removed. An exception is thrown if <paramref name="index"/> is out of bounds.
 	/// </summary>
-	public void RemoveAt(int index) => list.RemoveAt(index);
+	public Card RemoveAt(int index)
+	{
+		Card card = list[index];
+		list.RemoveAt(index);
+
+		return card;
+	}
 
 	/// <summary>
 	/// Completely empties this <see cref="Pile"/>.

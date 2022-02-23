@@ -1,11 +1,11 @@
 ﻿namespace Pesh.Common;
 
 /// <summary>
-/// A collection of scores for some <see cref="Player"/>s.
+/// Scores reported from a <see cref="Game{T}"/> session for a collection of players.
 /// </summary>
-public class Scores
+public class ScoreReport
 {
-	public Scores(int count, bool highestWins = true)
+	public ScoreReport(int count, bool highestWins = true)
 	{
 		this.highestWins = highestWins;
 		array = new int[count];
@@ -16,7 +16,7 @@ public class Scores
 	readonly int[] array;
 
 	/// <summary>
-	/// Reference accesses the individual scores of this <see cref="Scores"/> collection at <paramref name="index"/>.
+	/// Reference accesses the individual scores of this <see cref="ScoreReport"/> at <paramref name="index"/>.
 	/// </summary>
 	public ref int this[int index] => ref array[index];
 
